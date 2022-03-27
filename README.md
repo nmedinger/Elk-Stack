@@ -8,7 +8,7 @@ https://github.com/nmedinger/Elk-Stack/blob/Project1/Diagrams/Project1%20Topogra
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the configuration and YAML file may be used to install only certain pieces of it, such as Filebeat.
 
 Enter the playbook file.
-https://github.com/nmedinger/Elk-Stack/blob/Project1/install-elk.yml.yaml
+https://github.com/nmedinger/Elk-Stack/blob/Project1/Ansible/install-elk.yml
 
 This document contains the following details:
 Description of the Topology
@@ -19,7 +19,7 @@ Machines Being Monitored
 How to Use the Ansible Build
 
 
-Description of the Topology
+Description of the Topology:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
@@ -39,8 +39,8 @@ Filebeat monitors the log files or location you specify, collects log events and
 What does Metricbeat record?
 Metricbeat periodically collects metrics from the operating system and from services running on the server.  Metricbeat then takes the metrics and statistics it collects and ships them to the output you specify, such as Elasticsearch or Logstash.  
 
-The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+The configuration details of each machine may be found below:
+
 | Name         | Function                                              | IP Address | Operating System    |
 |--------------|-------------------------------------------------------|------------|---------------------|
 | Jump Box     | Gateway                                               | 10.0.0.1   | Linux (ubuntu18.04) |
@@ -49,13 +49,13 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Web-3        | Process web content and deliver to users              | 10.0.0.7   | Linux (ubuntu18.04) |
 | Elk Stack VM | Collects and process data from Web-1, Web-2 and Web-3 | 10.1.0.4   | Linux (ubuntu18.04) |
 
-Access Policies
+Access Policies:
 
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jumpbox Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-Add whitelisted IP addresses
+Add whitelisted IP addresses.
 The white listed IP address is 173.29.33.157, my laptop contains the SSH private key to log into the JumpBox Provisioner on port 22.
 
 Machines within the network can only be accessed by the Jump Box Provisioner.
@@ -77,7 +77,7 @@ A summary of the access policies in place can be found in the table below.
 | Elk-VM                	| Yes                 	| 173.29.33.157                     	|
 
 
-Elk Configuration
+Elk Configuration:
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
@@ -114,7 +114,8 @@ Filebeat consists of two main components “inputs” and “harvesters” which
 Metricbeat collects metrics from the operating system and services running on the servers.  It takes the metrics and statistics that it collects and ships them to the output you specify, such as Elasticsearch or Logstash.  
 
 
-Using the Playbook
+Using the Playbook:
+
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
