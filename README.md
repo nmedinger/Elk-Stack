@@ -50,12 +50,11 @@ The configuration details of each machine may be found below:
 | Elk Stack VM | Collects and process data from Web-1, Web-2 and Web-3 | 10.1.0.4   | Linux (ubuntu18.04) |
 
 Access Policies:
-
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jumpbox Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 
-Add whitelisted IP addresses.
+Add whitelisted IP addresses:
 The white listed IP address is 173.29.33.157, my laptop contains the SSH private key to log into the JumpBox Provisioner on port 22.
 
 Machines within the network can only be accessed by the Jump Box Provisioner.
@@ -78,7 +77,6 @@ A summary of the access policies in place can be found in the table below.
 
 
 Elk Configuration:
-
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 
 What is the main advantage of automating configuration with Ansible?
@@ -98,8 +96,7 @@ The following screenshot displays the result of running `docker ps` after succes
 Update the path with the name of your screenshot of docker ps output.
 https://github.com/nmedinger/Elk-Stack/blob/Project1/Diagrams/Elk%20Docker%20ps%20command.PNG
 
-Target Machines & Beats
-
+Target Machines & Beats:
 This ELK server is configured to monitor the following machines:
 Web-1, IP Address 10.0.0.5
 Web-2, IP Address 10.0.0.6
@@ -115,7 +112,6 @@ Metricbeat collects metrics from the operating system and services running on th
 
 
 Using the Playbook:
-
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
@@ -132,16 +128,22 @@ Update the ansible hosts file to include the following webservers:
 Run the playbook, and navigate to http://20.228.251.217:5601/app/kibana#/home to check that the installation worked as expected.
 
 Answer the following questions to fill in the blanks:
-Which file is the playbook? Where do you copy it?
+
+Which file is the playbook? 
 filebeat-playbook.yml is the playbook.
+
+Where do you copy it?
 The filebeat playbook is copied inside of the Jump Box Provisioner VM- root@6f07c4aa4ec4:/etc/ansible/roles/filebeat-playbook.yml
+
 Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+
 The root@6f07c4aa4ec4:/etc/ansible/hosts file has to be updated in order to run the playbook on a specific machine.
-Once you navigate into the /etc/ansible/hosts, nano into the hosts file and add the [webservers] that will be configured with filebeat and the [elk] VM which will be configured with the ELK Stack. .  
+Once you navigate into the /etc/ansible/hosts, nano into the hosts file and add the [webservers] that will be configured with filebeat and the [elk] VM which will be configured with the ELK Stack. 
+
 Which URL do you navigate to in order to check that the ELK server is running?
 http://20.228.251.217:5601/app/kibana#/home
 
-As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc:
 
 ssh azdmin@jump-box-ip-address 
 sudo docker container list -a (command list the name of the ansible container)
