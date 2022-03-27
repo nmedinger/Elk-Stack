@@ -39,33 +39,13 @@ Metricbeat periodically collects metrics from the operating system and from serv
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
-
-Name
-Function
-IP Address
-Operating System
-Jump Box 
-Gateway
-10.0.0.1
-Linux (ubuntu18.04)
-Web-1
-Process web content and deliver to users
-10.0.0.5
-Linux (ubuntu18.04)
-Web-2
-Process web content and deliver to users
-10.0.0.6
-Linux (ubuntu18.04)
-Web-3
-Process web content and deliver to users
-10.0.0.7
-Linux (ubuntu18.04)
-Elk Stack VM
-Collects and process data from Web-1, Web-2 and Web-3
-10.1.0.4
-Linux (ubuntu18.04)
-
-
+| Name         | Function                                              | IP Address | Operating System    |
+|--------------|-------------------------------------------------------|------------|---------------------|
+| Jump Box     | Gateway                                               | 10.0.0.1   | Linux (ubuntu18.04) |
+| Web-1        | Process web content and deliver to users              | 10.0.0.5   | Linux (ubuntu18.04) |
+| Web-2        | Process web content and deliver to users              | 10.0.0.6   | Linux (ubuntu18.04) |
+| Web-3        | Process web content and deliver to users              | 10.0.0.7   | Linux (ubuntu18.04) |
+| Elk Stack VM | Collects and process data from Web-1, Web-2 and Web-3 | 10.1.0.4   | Linux (ubuntu18.04) |
 
 Access Policies
 
@@ -85,28 +65,14 @@ The local host (my laptop) has access to the ELK VM with a public IP address of 
 
 
 A summary of the access policies in place can be found in the table below.
-Name
-Publicly Accessible
-Allowed IP Addresses
-Jump Box Provisioner 
-Yes
-173.29.33.157
-Load Balancer
-Yes
-173.29.33.157
-Web-1
-No
-10.0.0.4, 10.1.0.4, 52.234.45.199
-Web-2
-No
-10.0.0.4, 10.1.0.4, 52.234.45.199
-Web-3
-No
-10.0.0.4, 10.1.0.4, 52.234.45.199
-Elk-VM
-Yes
-173.29.33.157
-
+| Name                  	| Publicly Accessible 	| Allowed IP Addresses              	|
+|-----------------------	|---------------------	|-----------------------------------	|
+| Jump Box Provisioner  	| Yes                 	| 173.29.33.157                     	|
+| Load Balancer         	| Yes                 	| 173.29.33.157                     	|
+| Web-1                 	| No                  	| 10.0.0.4, 10.1.0.4, 52.234.45.199 	|
+| Web-2                 	| No                  	| 10.0.0.4, 10.1.0.4, 52.234.45.199 	|
+| Web-3                 	| No                  	| 10.0.0.4, 10.1.0.4, 52.234.45.199 	|
+| Elk-VM                	| Yes                 	| 173.29.33.157                     	|
 
 
 Elk Configuration
@@ -145,7 +111,7 @@ Filebeat
 Metricbeat
 
 These Beats allow us to collect the following information from each machine:
- Filebeat consists of two main components “inputs” and “harvesters” which work together to tail files and send event data to the output you specify. The harvester is responsible for reading the content of a single file. The input is responsible for managing the harvesters and finding all sources to read from. 
+Filebeat consists of two main components “inputs” and “harvesters” which work together to tail files and send event data to the output you specify. The harvester is responsible for reading the content of a single file. The input is responsible for managing the harvesters and finding all sources to read from. 
 Metricbeat collects metrics from the operating system and services running on the servers.  It takes the metrics and statistics that it collects and ships them to the output you specify, such as Elasticsearch or Logstash.  
 
 
