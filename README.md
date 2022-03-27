@@ -1,3 +1,5 @@
+Automated ELK Stack Deployment
+
 The files in this repository were used to configure the network depicted below.
 
 Update the path with the name of your diagram. 
