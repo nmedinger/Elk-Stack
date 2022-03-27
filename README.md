@@ -5,7 +5,7 @@ Update the path with the name of your diagram](Images/diagram_filename.png)
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the configuration and YAML file may be used to install only certain pieces of it, such as Filebeat.
 
 Enter the playbook file.
-Install-elk.yml  (is this what they are referring to?)
+https://github.com/nmedinger/Elk-Stack/blob/Project1/install-elk.yml.yaml
 
 This document contains the following details:
 Description of the Topology
