@@ -156,3 +156,4 @@ dpkg -i filebeat-7.4.0-amd64.deb
 nano filebeat-playbook.yml (add the filebeat playbook configuration)
 ansible-playbook filebeat-playbook.yml
 
+
