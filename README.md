@@ -145,13 +145,13 @@ http://20.228.251.217:5601/app/kibana#/home
 
 As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc:
 
-ssh azdmin@jump-box-ip-address 
-sudo docker container list -a (command list the name of the ansible container)
+ssh azdmin@jump-box-ip-address \
+sudo docker container list -a (command list the name of the ansible container) \
 sudo docker start [add container name] 
 sudo docker attach [add container name] (command will move you into the ansible container)
 cd /etc/ansible
 nano /etc/ansible/hosts (once inside of the hosts file configure [webservers] and [elk] )
- curl https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb > /etc/filebeat/filebeat.yml
+curl https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb > /etc/filebeat/filebeat.yml
 dpkg -i filebeat-7.4.0-amd64.deb
 nano filebeat-playbook.yml (add the filebeat playbook configuration)
 ansible-playbook filebeat-playbook.yml
